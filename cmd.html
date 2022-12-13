@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CMD</title>
+    <link rel="stylesheet" href="assets/css/navrooms.css">
+    <link rel="stylesheet" href="assets/css/xss.css">
+    <link rel="stylesheet" href="assets/css/body.css">
+    <link rel="stylesheet" href="assets/css/xss-buttons.css">
+    <link rel="stylesheet" href="assets/css/labs-button.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    
+  </head>
+
+  <body onload="myFunction()" style="margin:0;">
+    <div id="loader"></div>
+      <div style="display:none;" id="myDiv" class="animate-bottom">
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+    <header><b>Rooms</b></header>
+    <ul>
+     <li><a href="index.html"><i class="fas fa-qrcode"></i><b>Home</b></a></li>
+     <li><a href="xss.html"><i class="fas fa-link"></i><b>XSS</b></a></li>
+     <li><a href="sql.html"><i class="fas fa-stream"></i><b>SQL</b></a></li>
+     <li><a href="cmd.html"><i class="fas fa-calendar-week"></i><b>CMD</b></a></li>
+    </ul>
+   </div>
+
+   <section>
+    <main class="center">
+      <br>
+      <br>
+      <img src="assets/images/cmd.png"  class="logo">
+      <br>
+      <br>
+      <p><em class="xss"><b>OS command injection</b></em> is a web security vulnerability that allows an attacker to execute arbitrary operating system (OS) commands on the server that is running an application, and typically fully compromise the application and all its data.</p> <br>
+      <p>Very often, an attacker can leverage an OS command injection vulnerability to compromise other parts of the hosting infrastructure, exploiting trust relationships to pivot the attack to other systems within the organization.</p>
+      <br>
+      <img src="assets/images/cmd-learn.png"  class="logo">
+
+  <br>
+  <h2>LABS</h2>
+  <br>
+  <div class="lab-btn-center">
+    <button class="lab-btn" onclick="document.location='cmd-low.php'" style="color:rgb(0, 0, 0);"><span style="color:rgb(8, 248, 40);"><b>Low</b></span><span><b>Difficulty</b></span></button>
+    <button class="lab-btn" onclick="document.location='cmd-medium.php'" style="color:rgb(0, 0, 0);"><span style="color:rgb(245, 185, 22);"><b>Medium</b></span><span><b>Difficulty</b></span></button>
+    <button class="lab-btn" onclick="document.location='cmd-high.php'" style="color:rgb(0, 0, 0);"><span style="color:rgb(255, 0, 0);"><b>High</b></span><span><b>Difficulty</b></span></button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<p>Learn More About Command Injection</p>
+<button class="more-button" onclick="document.location='https://portswigger.net/web-security/os-command-injection'" type="button">Click Here</button>
+</main>
+
+
+  </section>
+
+
+  <script src="assets/js/types_xss.js"></script>
+  <script>
+    var myVar;
+    
+    function myFunction() {
+      myVar = setTimeout(showPage, 1500);
+    }
+    
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+    }
+
+    
+    </script>
+
+  </body>
+</html>
+
+
+
