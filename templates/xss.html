@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>XSS</title>
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'css/navrooms.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'css/xss.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'css/body.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'css/xss-buttons.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'css/labs-button.css')}}">
+    <link rel="stylesheet" href="{{ url_for ('static', filename = 'css/loader.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    
+  </head>
+
+  <body onload="myFunction()" style="margin:0;" >
+    <div id="loader"></div>
+      <div style="display:none;" id="myDiv" class="animate-bottom">
+      <input type="checkbox" id="check">
+      <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+      </label>
+      <div class="sidebar">
+      <header><b>Rooms</b></header>
+      <ul>
+     <li><a href="/"><i class="fas fa-qrcode"></i><b>Home</b></a></li>
+     <li><a href="/xss"><i class="fas fa-link"></i><b>XSS</b></a></li>
+     <li><a href="sql.html"><i class="fas fa-stream"></i><b>SQL</b></a></li>
+     <li><a href="cmd.html"><i class="fas fa-calendar-week"></i><b>CMD</b></a></li>
+    </ul>
+   </div>
+
+   <section>
+    <main class="center">
+      <br>
+      <br>
+      <img src="{{ url_for ('static', filename = 'image/xss.png')}}" alt="Paris" class="logo">
+      <h1 class="center">Cross Site Scripting (XSS)</h1>
+      <br>
+      <br>
+      <p><em class="xss"><b>Cross-site scripting <sup>(XSS)</sup></b></em>  is a web security vulnerability that allows an attacker to compromise the interactions that users have with a vulnerable application.</p> <br>
+      <p>It allows an attacker to circumvent the same origin policy, which is designed to segregate different websites from each other. Cross-site scripting vulnerabilities normally allow an attacker to <em class="xss"><b>masquerade as a victim user</b></em>, to carry out any actions that the user is able to perform, and to access any of the user's data.</p>
+      <br>
+      <p>Cross-site scripting vulnerabilities normally allow an attacker to masquerade as a victim user, to carry out any actions that the user is able to perform, and to access any of the user's data. If the victim user has privileged access within the application, then the attacker might be able to gain full control over all of the application's functionality and data.</p>
+      <br>
+      <br>
+      <h2>Types of XSS attacks</h2>
+      <h6>(Click for Descriptions.)</h6>
+      <p id='demo1' style='display: none'>Reflected cross-site scripting arises when an application receives data in an HTTP request and includes that data within the immediate response in an unsafe way.</p><br>
+      <p id='demo2' style='display: none'>Stored cross-site scripting arises when an application receives data from an untrusted source and includes that data within its later HTTP responses in an unsafe way.</p> <br>
+      <p id='demo3' style='display: none'>DOM-based XSS arises when an application contains some client-side JavaScript that processes data from an untrusted source in an unsafe way, usually by writing the data back to the DOM.</p> <br>
+      <a  type='button' onclick="toggleText1()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Reflected XSS
+    </a>
+    <a type='button' onclick="toggleText2()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Stored XSS
+    </a>
+    <a type='button' onclick="toggleText3()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        DOM-based XSS
+    </a>
+
+  <br>
+  <br>
+  <h2>LABS</h2>
+  <h6>(These Labs are based on Reflected Cross Site Scripting Attacks.)</h6>
+  <br>
+  <br>
+  <div class="lab-btn-center">
+    <button class="lab-btn" onclick="document.location='xss-low.php'" style="color:rgb(0, 0, 0);"> <span style="color:rgb(8, 248, 40);"><b> <a href = "/xsslow">Low</a></b></span><span><b>Difficulty</b></span></button>
+    <button class="lab-btn" onclick="document.location='xss-medium.php'" style="color:rgb(0, 0, 0);"><span style="color:rgb(245, 185, 22);"><b>Medium</b></span><span><b>Difficulty</b></span></button>
+    <button class="lab-btn" onclick="document.location='xss-high.php'" style="color:rgb(0, 0, 0);"><span style="color:rgb(255, 0, 0);"><b>High</b></span><span><b>Difficulty</b></span></button>
+</div>
+<br>
+<br>
+<br>
+<br>
+<p>Learn More About XSS</p>
+<button class="more-button" onclick="document.location='https://portswigger.net/web-security/cross-site-scripting'" type="button">Click Here</button>
+</main>
+
+
+  </section>
+
+</div>
+  <script src="{{ url_for ('static', filename = 'javascript/types_xss.js')}}"></script>
+  <script>
+    var myVar;
+    
+    function myFunction() {
+      myVar = setTimeout(showPage, 1500);
+    }
+    
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+    }
+
+    
+    </script>
+  </body>
+</html>
+
