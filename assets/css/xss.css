@@ -1,0 +1,49 @@
+body {
+    color: rgb(255, 255, 255);
+ background-image: url("choosing-bg.jpg");
+ font-size: 150%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.xss
+{
+  color: #f1ba06;
+  text-shadow: #ffffff;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #f1ba06;
+} 
+
+h2{
+    text-align: center;
+    text-transform: uppercase;
+    color: #f1ba06;
+    font-size: 100%;
+}
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  h6{
+    text-align: center;
+    color: #ffffff;
+    font-size: 80%;
+}
